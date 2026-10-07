@@ -1,0 +1,28 @@
+set,model,metric,cond,mean,ci_lo,ci_hi
+main (n=19),wilor,pa_mpjpe_mm,G0,4.537,4.14,4.978
+main (n=19),wilor,pa_mpjpe_mm,G2,6.139,5.635,6.66
+main (n=19),wilor,pa_mpjpe_mm,G3a,6.918,6.357,7.474
+main (n=19),mediapipe,det_rate,G0,0.9293,0.8823,0.9667
+main (n=19),mediapipe,det_rate,G2,0.05744,0.02747,0.09592
+main (n=19),mediapipe,det_rate,G3a,0.02788,0.01244,0.04619
+main (n=19),wilor,det_rate,G0,1,1,1
+main (n=19),wilor,det_rate,G2,0.9749,0.9539,0.9904
+main (n=19),wilor,det_rate,G3a,0.9614,0.9439,0.977
+with excluded (n=20),wilor,pa_mpjpe_mm,G0,4.535,4.152,4.975
+with excluded (n=20),wilor,pa_mpjpe_mm,G2,6.11,5.648,6.617
+with excluded (n=20),wilor,pa_mpjpe_mm,G3a,6.932,6.412,7.435
+with excluded (n=20),mediapipe,det_rate,G0,0.9325,0.8847,0.9681
+with excluded (n=20),mediapipe,det_rate,G2,0.07501,0.03394,0.1255
+with excluded (n=20),mediapipe,det_rate,G3a,0.04401,0.01611,0.08333
+with excluded (n=20),wilor,det_rate,G0,1,1,1
+with excluded (n=20),wilor,det_rate,G2,0.9736,0.9542,0.9889
+with excluded (n=20),wilor,det_rate,G3a,0.963,0.9463,0.9777
+main minus flagged 20200709_142123,wilor,pa_mpjpe_mm,G0,4.561,4.154,5.003
+main minus flagged 20200709_142123,wilor,pa_mpjpe_mm,G2,6.15,5.656,6.713
+main minus flagged 20200709_142123,wilor,pa_mpjpe_mm,G3a,6.871,6.314,7.453
+main minus flagged 20200709_142123,mediapipe,det_rate,G0,0.9293,0.8788,0.9684
+main minus flagged 20200709_142123,mediapipe,det_rate,G2,0.05555,0.02332,0.09246
+main minus flagged 20200709_142123,mediapipe,det_rate,G3a,0.02943,0.01287,0.04824
+main minus flagged 20200709_142123,wilor,det_rate,G0,1,1,1
+main minus flagged 20200709_142123,wilor,det_rate,G2,0.9743,0.9519,0.9908
+main minus flagged 20200709_142123,wilor,det_rate,G3a,0.9597,0.9419,0.9755

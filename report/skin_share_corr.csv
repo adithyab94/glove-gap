@@ -1,0 +1,10 @@
+model,cond,quantity,spearman_rho,p
+mediapipe,G1,det drop,-0.286,0.235
+mediapipe,G2,det drop,-0.277,0.251
+mediapipe,G3a,det drop,-0.219,0.367
+wilor,G1,det drop,,
+wilor,G2,det drop,0.184,0.452
+wilor,G3a,det drop,-0.202,0.406
+wilor,G1,PA-MPJPE increase,-0.112,0.647
+wilor,G2,PA-MPJPE increase,0.374,0.115
+wilor,G3a,PA-MPJPE increase,0.47,0.0422

@@ -1,0 +1,4 @@
+932122061900 raw     : n=229 frames  skin-in-ring median 0.49  p90 0.77
+932122061900 refined : n=229 frames  skin-in-ring median 0.11  p90 0.39
+932122062010 raw     : n=220 frames  skin-in-ring median 0.48  p90 0.71
+932122062010 refined : n=224 frames  skin-in-ring median 0.04  p90 0.16

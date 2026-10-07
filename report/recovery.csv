@@ -1,0 +1,52 @@
+cond,metric,intervention,recovery_pct,ci_lo,ci_hi,gap_reduction_pct,gr_lo,gr_hi
+G2,mpjpe_abs_mm,mono -> 2view,157,135,196,72.2,61.5,80.2
+G2,mpjpe_abs_mm,mono -> 2view_oe,158,136,194,74.6,63.3,82.4
+G2,mpjpe_abs_mm,mono -> hybrid,97.7,82.9,116,45.5,21.1,59.2
+G2,mpjpe_abs_mm,mono -> 8cam,179,154,221,83.2,75.6,88
+G2,mpjpe_abs_mm,glove spec: thin nitrile G1 instead of Gx (2view),67.4,56.3,76.7,,,
+G2,mpjpe_rel_mm,mono -> 2view,-1.13,-34.8,22.3,36.3,21.3,50.3
+G2,mpjpe_rel_mm,mono -> 2view_oe,-0.469,-32.4,22.9,36.9,21.6,50.6
+G2,mpjpe_rel_mm,mono -> hybrid,34.1,28.2,40.9,20.9,14.9,27.5
+G2,mpjpe_rel_mm,glove spec: thin nitrile G1 instead of Gx (2view),72.7,61.8,82.4,,,
+G2,jitter_mm_f2,mono -> 2view,172,157,189,66.4,57.6,72.6
+G2,jitter_mm_f2,mono -> 2view_oe,189,174,207,77.5,71.9,81.5
+G2,jitter_mm_f2,mono -> hybrid,157,145,172,60.1,52.1,67.1
+G2,jitter_mm_f2,glove spec: thin nitrile G1 instead of Gx (2view),66.3,51.5,78.8,,,
+G2,event_f1,mono -> 2view,93,,,,,
+G2,event_f1,mono -> 2view_oe,58.2,,,,,
+G2,event_f1,mono -> hybrid,-16.1,,,,,
+G3a,mpjpe_abs_mm,mono -> 2view,129,117,148,80.6,74.4,85.5
+G3a,mpjpe_abs_mm,mono -> 2view_oe,129,117,147,81.9,75.6,86.2
+G3a,mpjpe_abs_mm,mono -> hybrid,79.2,68.8,89.7,49.7,32.4,62
+G3a,mpjpe_abs_mm,mono -> 8cam,142,129,164,87.9,83.7,90.8
+G3a,mpjpe_abs_mm,glove spec: thin nitrile G1 instead of Gx (2view),73.7,66,80.1,,,
+G3a,mpjpe_rel_mm,mono -> 2view,28.1,6.8,44.2,48.6,36,59.3
+G3a,mpjpe_rel_mm,mono -> 2view_oe,28.6,7.48,45.1,49.1,36.6,60.2
+G3a,mpjpe_rel_mm,mono -> hybrid,25.9,21.4,31.6,18.7,14,24.5
+G3a,mpjpe_rel_mm,glove spec: thin nitrile G1 instead of Gx (2view),81.4,73.8,88.2,,,
+G3a,jitter_mm_f2,mono -> 2view,132,123,141,65.1,57.3,71.4
+G3a,jitter_mm_f2,mono -> 2view_oe,147,139,156,76,71.3,80.5
+G3a,jitter_mm_f2,mono -> hybrid,117,106,127,54.9,44,64.6
+G3a,jitter_mm_f2,glove spec: thin nitrile G1 instead of Gx (2view),79.5,70.8,86.9,,,
+G3a,event_f1,mono -> 2view,9.64,,,,,
+G3a,event_f1,mono -> 2view_oe,9.64,,,,,
+G3a,event_f1,mono -> hybrid,28.9,,,,,
+G3b_k4,mpjpe_abs_mm,mono -> 2view,103,99.6,106,88,85.9,90
+G3b_k4,mpjpe_abs_mm,mono -> 2view_oe,103,99.9,106,88.6,86.5,90.6
+G3b_k4,mpjpe_abs_mm,mono -> hybrid,84,80.4,87.6,74.9,71.4,78.1
+G3b_k4,mpjpe_abs_mm,mono -> 8cam,109,106,113,92.6,91.1,93.7
+G3b_k4,mpjpe_abs_mm,glove spec: thin nitrile G1 instead of Gx (2view),86.8,83.2,90.6,,,
+G3b_k4,mpjpe_rel_mm,mono -> 2view,-14,-30.2,1.45,3.32,-8.78,14.4
+G3b_k4,mpjpe_rel_mm,mono -> 2view_oe,-13.3,-30.2,2.11,3.96,-7.84,15.2
+G3b_k4,mpjpe_rel_mm,mono -> hybrid,26.8,22.1,32.9,20.7,15.3,27
+G3b_k4,mpjpe_rel_mm,glove spec: thin nitrile G1 instead of Gx (2view),91.7,88.3,94.6,,,
+G3b_k4,jitter_mm_f2,mono -> 2view,108,99.9,115,51.2,43.8,57.9
+G3b_k4,jitter_mm_f2,mono -> 2view_oe,126,120,133,65.8,61.3,70.3
+G3b_k4,jitter_mm_f2,mono -> hybrid,104,95.2,112,51.7,43,59.1
+G3b_k4,jitter_mm_f2,glove spec: thin nitrile G1 instead of Gx (2view),87.6,82.3,91.9,,,
+G3b_k4,event_f1,mono -> 2view,37.3,,,,,
+G3b_k4,event_f1,mono -> 2view_oe,50.2,,,,,
+G3b_k4,event_f1,mono -> hybrid,30.5,,,,,
+G2,det_rate,model: MediaPipe -> WiLoR,105,,,,,
+G3a,det_rate,model: MediaPipe -> WiLoR,104,,,,,
+G3b_k4,det_rate,model: MediaPipe -> WiLoR,100,,,,,

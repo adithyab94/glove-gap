@@ -1,0 +1,11 @@
+{
+ "one_euro": {
+  "mincutoff": 4.0,
+  "beta": 0.2,
+  "dcutoff": 1.0,
+  "g0_mpjpe_abs_mm": 9.734772928952955,
+  "g0_mpjpe_abs_unfiltered_mm": 9.413538865978758,
+  "g0_jitter_mm_f2": 3.0424607969291624
+ },
+ "gate_tau_px": 3.085781330081983
+}

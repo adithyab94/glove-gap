@@ -1,0 +1,21 @@
+data/raw/
+data/cache/
+third_party/
+.venv/
+__pycache__/
+*.pkl
+*.pt
+*.ckpt
+pretrained_models/
+mano_data/
+_DATA/
+data/samples/
+hamer_demo_data.tar.gz
+.venv*/
+eval/out/traces.pkl
+eval/out/p3_log.txt
+
+# not for the public repo
+report/application_answer.md
+report/P2_NOTES.md
+report/P3_NOTES.md

@@ -1,0 +1,21 @@
+# P2 supplementary benchmark: in-the-wild detection recall, glove vs bare (budget 30 min).
+dataset:
+  root: data/raw/roboflow_gloves
+  split: test               # 83 images; never used for tuning
+  classes: {glove: glove, "normal hand": bare}
+match:
+  iou: 0.5                  # recall = GT boxes matched by a predicted hand box at IoU >= 0.5
+  pred_box: keypoint_extent_pad10   # both models: 21-kp extent padded 10%/side (MP has no box)
+  also_report: wilor_native_box     # WiLoR's YOLO box as an extra row
+strata:
+  box_size: terciles        # sqrt(GT box area), tercile edges computed on the pooled test set
+ci: wilson_95
+detectors: [mediapipe, wilor]      # HaMeR shares WiLoR's detector -> excluded
+ablation:
+  mediapipe_on_wilor_crops: true   # MP on WiLoR-detector crops: splits detection vs pose failure
+  crop_scale: 1.5                  # square crop, 1.5x the longer side of the WiLoR box
+# Glove boxes in these test image ids are excluded from the main (worn-glove) analysis; flagged by
+# eye from a contact sheet BEFORE any model was run. Bare-hand boxes in the same images are kept.
+exclude_glove_unworn: [13, 17, 36, 48, 51, 62, 71, 80]         # empty / lying flat
+exclude_glove_unsure: [9, 27, 31, 35, 42, 46, 50, 59, 60, 74]  # product shots, no wearer visible
+seed: 0

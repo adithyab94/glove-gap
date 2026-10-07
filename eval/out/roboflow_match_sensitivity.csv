@@ -1,0 +1,13 @@
+method,class,rule,n,recall,ci_lo,ci_hi
+mediapipe,bare,iou50,37,1.0,0.906,1.0
+mediapipe,bare,iou30,37,1.0,0.906,1.0
+mediapipe,bare,inside50,37,1.0,0.906,1.0
+mediapipe,glove,iou50,31,0.065,0.018,0.207
+mediapipe,glove,iou30,31,0.129,0.051,0.289
+mediapipe,glove,inside50,31,0.129,0.051,0.289
+wilor,bare,iou50,37,1.0,0.906,1.0
+wilor,bare,iou30,37,1.0,0.906,1.0
+wilor,bare,inside50,37,1.0,0.906,1.0
+wilor,glove,iou50,31,0.516,0.348,0.68
+wilor,glove,iou30,31,0.613,0.438,0.763
+wilor,glove,inside50,31,0.645,0.469,0.789

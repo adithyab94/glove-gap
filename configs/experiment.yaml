@@ -1,0 +1,42 @@
+# Main experiment: DexYCB + synthetic gloves (no second physical camera -> no own 2-view rig).
+seed: 0
+dexycb:
+  root: data/raw/dexycb
+  subject: 20200709-subject-01
+  # Leakage: HaMeR (and, unverified, WiLoR) train on DexYCB S0-train = sequences i%5 != 4 of every
+  # subject (toolkit dex_ycb.py; HaMeR dex-train has 407 shards ~ S0-train's 406,888 samples).
+  # Use subject-01's held-out S0-val sequences (i%5 == 4 in sorted order): 20 seqs, one object
+  # each, 10 right + 10 left hands.
+  selection: s0_heldout
+  fps_src: 30
+  stride: 1                  # sequences are only ~72 frames; keep 30 fps for event timing
+  # 2-view rig: non-neighbouring pair, 1.03 m baseline, 70 deg at workspace centre
+  # (extrinsics_20200702_151821; neighbours are 35-50 deg, opposed >100 deg). On the 20 held-out
+  # sequences both cams see the hand (>500 px mask) in >=75% of sampled frames of every sequence
+  # (mean 0.94 / 0.93, the two best cams). Earlier pairs rejected: 840412060917+932122060857 and
+  # 841412060263+932122060861 each have a cam that loses the hand in >=1 sequence.
+  pair: ["932122061900", "932122062010"]
+  all_cams_upper_bound: true # also triangulate from all 8 views
+
+gloves:                      # applied inside DexYCB hand mask (seg == 255) only
+  G0: {kind: bare}
+  G1: {kind: nitrile, rgb: [40, 110, 230], shade_gamma: 0.8, detail_blur: 0.0}
+  G2: {kind: knit, rgb: [70, 70, 75], shade_gamma: 0.5, detail_blur: 2.0, tex: rib, tex_period_px: 3, tex_amp: 0.12}
+  G3a: {kind: insulated, rgb: [35, 35, 40], shade_gamma: 0.4, detail_blur: 4.0, tex: quilt, tex_period_px: 9, tex_amp: 0.08}
+  G3b: {kind: insulated, base: G3a, grow_px: [1, 2, 3, 4]}   # sensitivity curve; k=6 dropped: finger gaps fully closed (README)
+  # G4: insulated glove (G3a texture/blur/shading) in G1's bright blue -> is colour specifiable
+  # when insulation is mandatory? k=0 pairs with G3a, k=4 with G3b_k4. (MediaPipe also runs via make all.)
+  G4: {kind: insulated, rgb: [40, 110, 230], shade_gamma: 0.4, detail_blur: 4.0, tex: quilt, tex_period_px: 9, tex_amp: 0.08}
+  G4b: {kind: insulated, base: G4, grow_px: [4]}
+
+events:
+  source: object_motion      # grasped YCB object translation from its pose at frame 0
+  move_thresh_m: 0.005
+  lag_correction: estimate_on_G0   # constant onset-vs-contact lag, applied to all conditions
+  tolerance_s: 0.100        # = +-3 frames at 30 fps
+
+analysis:
+  exclude_main: ["20200709_150144"]   # 019_pitcher_base: residual skin share 0.44 on 932122061900 -> appendix
+  flag: {"20200709_142123": "copper-lid glove bleed (002_master_chef_can)"}
+  bootstrap: {n: 2000, unit: sequence}
+  upper_bound: {model: wilor, conditions: [G0, G2, G3a, G3b_k4], stride: 2}   # 8-cam, cost-capped
