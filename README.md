@@ -3,7 +3,7 @@
 **What happens to 3D hand-pose estimation, the front end of human-video → robot-policy
 pipelines, when every operator wears work gloves? And which capture choices fix it?**
 
-📄 One-page report: [`report/glove_gap.pdf`](report/glove_gap.pdf) · ⏱ 4-day PoC ·
+📄 One-page report: [`report/glove_gap.pdf`](report/glove_gap.pdf) ·
 🔁 `make all` reproduces every number from cached predictions
 
 ![Same frame, six gloves. White = ground truth, orange = WiLoR, blue = MediaPipe](report/fig_pose_examples.jpg)
